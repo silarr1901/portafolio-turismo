@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Turístico - BUAP</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --azul-mar: #0077b6;
+            --rosa-coral: #ff8fa3;
+            --naranja-sol: #ffb703;
+            --verde-palmera: #2d6a4f;
+            --blanco-arena: #fefae0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--blanco-arena);
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        /* --- Navegación --- */
+        nav {
+            background-color: pink;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--azul-mar);
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--rosa-coral);
+        }
+
+        /* --- Hero Section (Inicio) --- */
+        .hero {
+            background: linear-gradient(135deg, var(--rosa-coral), var(--rosa-coral));
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            border-bottom: 8px solid var(--naranja-sol);
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 6px solid white;
+            object-fit: cover;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .hero h1 { font-size: 3rem; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
+        .hero p { font-size: 1.5rem; opacity: 0.9; margin-top: 10px; }
+
+        /* --- Secciones Generales --- */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .card {
+            background: pink;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--rosa-coral);
+        }
+
+        h2 {
+            color: var(--blanco-arena);
+            font-size: 2rem;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* --- Intereses --- */
+        .intereses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .interes-item {
+            background: #f1f8ff;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #e0eefb;
+            color: var(--verde-palmera);
+            font-weight: 500;
+        }
+
+        /* --- Contacto --- */
+        .contact-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .contact-info { flex: 1; min-width: 250px; }
+        .contact-form { flex: 2; min-width: 300px; }
+
+        .info-row {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .info-row i {
+            font-size: 1.5rem;
+            color: var(--naranja-sol);
+            width: 30px;
+        }
+
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; color: #555; }
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #eee;
+            border-radius: 10px;
+            box-sizing: border-box;
+            font-size: 1rem;
+        }
+
+        .btn-enviar {
+            background: var(--rosa-coral);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1.1rem;
+            transition: background 0.3s ease;
+        }
+
+        .btn-enviar:hover { background: var(--verde-palmera); }
+
+        /* --- Footer --- */
+        footer {
+            background: #333;
+            color: pink;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .social-icons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.8rem;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover { color: var(--rosa-coral); }
+
+        .buap-logo { color: var(--naranja-sol); font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#sobre-mi">Sobre Mí</a>
+        <a href="#intereses">Intereses</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+
+    <section id="inicio" class="hero">
+        <img src="https://images.pexels.com/photos/3225531/pexels-photo-3225531.jpeg" width ="200">
+        <h1>¡Hola, soy Silvia!</h1>
+        <p>Futura Licenciada en Administración Turística <br> <span class="buap-logo">BUAP 🐺</span></p>
+    </section>
+
+    <div class="container">
+        
+        <section id="sobre-mi" class="card">
+            <h2><i class="fas fa-sun"></i> Mi Perfil Profesional</h2>
+            <p>Soy una estudiante apasionada por descubrir nuevos horizontes y promover el turismo sustentable en México. Actualmente me formo en la <b>Benemérita Universidad Autónoma de Puebla</b>, enfocándome en la creación de experiencias inolvidables para viajeros de todo el mundo.</p>
+        </section>
+<div class="galeria-turismo" style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;">
+
+    <div class="foto-item" style="width: 30%;"> 
+        <img src="merida.jpeg" style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px;"> 
+    </div>
+
+    <div class="foto-item" style="width: 30%;"> 
+        <img src="playa.jpeg" style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px;"> 
+    </div>
+
+    <div class="foto-item" style="width: 30%;"> 
+        <img src="valquirico.jpeg" style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px;"> 
+    </div>
+
+    <div class="foto-item" style="width: 30%;"> 
+        <img src="park.jpeg" style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px;"> 
+    </div>
+
+    <div class="foto-item" style="width: 30%;"> 
+        <img src="cenote.jpeg" style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px;"> 
+    </div>
+
+    <div class="foto-item" style="width: 30%;"> 
+        <img src="viaje.jpeg" style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px;"> 
+    </div>
+
+</div>
+
+
+</div>
+
+</div>
+        <section id="intereses" class="card">
+            <h2><i class="fas fa-palm-tree"></i> Áreas de Interés</h2>
+            <div class="intereses-grid">
+                <div class="interes-item">Planificación de Viajes</div>
+                <div class="interes-item">Turismo Gastronómico</div>
+                <div class="interes-item">Ecoturismo</div>
+                <div class="interes-item">Gestión Hotelera</div>
+                <div class="interes-item">Marketing Digital</div>
+                <div class="interes-item">Relaciones Públicas</div>
+            </div>
+        </section>
+<div style="display: flex; justify-content: center; margin: 20px 0;">
+<a href="https://www.youtube.com/embed/OnqfnDqYpCk?si=pJoOYis1lf85OEP3" target="_blank">
+    <button style="background-color: #FF0000; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 5px; font-weight: bold;">
+        Reproducir Video 
+    </button>
+</a>
+ </div>
+
+<section id="contacto" class="card">
+            <h2><i class="fas fa-paper-plane"></i> Contacto</h2>
+            <div class="contact-flex">
+                <div class="contact-info">
+                    <p>¿Quieres colaborar en un proyecto o agendar una entrevista?</p>
+                    <div class="info-row">
+                        <i class="fas fa-envelope"></i>
+                        <span>aa202427726@alm.buap.mx</span>
+                    </div>
+                    <div class="info-row">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>+22 26 61 55 51</span>
+                    </div>
+                    <div class="info-row">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Puebla, México</span>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label>Nombre</label>
+                            <input type="text" placeholder="Tu nombre...">
+                        </div>
+                        <div class="form-group">
+                            <label>Mensaje</label>
+                            <textarea rows="4" placeholder="¿En qué puedo ayudarte?"></textarea>
+                        </div>
+                        <button type="submit" class="btn-enviar">Enviar Saludo ✨</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>Orgullosamente <b>Lobo BUAP</b> | Licenciatura en Administración Turística</p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+        </div>
+        <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.7;">© 2024 Mi Portafolio Veraniego</p>
+    </footer>
+
+</body>
+</html>
